@@ -39,4 +39,4 @@ in-mysql:
 	docker run -i -p 3306:3306  -v ~/data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=123456 -t eva/mysql /bin/bash
 
 clean:
-	docker rmi -f $(shell docker images | grep "<none>" | awk "{print \$3}")
+	docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
